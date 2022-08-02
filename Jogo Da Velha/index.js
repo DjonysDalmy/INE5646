@@ -37,6 +37,37 @@ const limpaTudo = () => {
 };
 
 const verificarResultado = () => {
+  let coluna = []
+  let i = 0
+  while(i < 3){
+    let j = 0
+    let col1 = []
+    while (j < 3){
+      col1.push(jogo[j][i])
+      j++
+    }
+    coluna.push(col1)
+    i++
+  }
+  coluna.forEach((coluna) => {
+    if (
+      coluna[0].casaValor != 0 &&
+      coluna[0].casaValor == coluna[1].casaValor &&
+      coluna[1].casaValor == coluna[2].casaValor
+    ) {
+      alert(`${coluna[0].casaValor} Ganhou!`);
+      if(coluna[0].casaValor === 'X'){
+        let value = parseInt(document.getElementById('ponto_x').innerHTML)
+        value ++
+        document.getElementById('ponto_x').innerHTML = value
+      }else{
+        let value = parseInt(document.getElementById('ponto_o').innerHTML)
+        value ++
+        document.getElementById('ponto_o').innerHTML = value
+      }
+      limpaTudo();
+    }
+  });
   jogo.forEach((linha) => {
     if (
       linha[0].casaValor != 0 &&
@@ -44,9 +75,58 @@ const verificarResultado = () => {
       linha[1].casaValor == linha[2].casaValor
     ) {
       alert(`${linha[0].casaValor} Ganhou!`);
-      limpaTudo;
+      if(linha[0].casaValor === 'X'){
+        let value = parseInt(document.getElementById('ponto_x').innerHTML)
+        value ++
+        document.getElementById('ponto_x').innerHTML = value
+      }else{
+        let value = parseInt(document.getElementById('ponto_o').innerHTML)
+        value ++
+        document.getElementById('ponto_o').innerHTML = value
+      }
+      limpaTudo();
     }
   });
+  if(jogo[0][0].casaValor != 0 && 
+    jogo[0][0].casaValor == jogo[1][1].casaValor &&
+    jogo[1][1].casaValor == jogo[2][2].casaValor){
+      alert(`${jogo[0][0].casaValor} Ganhou!`);
+      if(jogo[0][0].casaValor === 'X'){
+        let value = parseInt(document.getElementById('ponto_x').innerHTML)
+        value ++
+        document.getElementById('ponto_x').innerHTML = value
+      }else{
+        let value = parseInt(document.getElementById('ponto_o').innerHTML)
+        value ++
+        document.getElementById('ponto_o').innerHTML = value
+      }
+      limpaTudo();
+    }
+  if(jogo[2][0].casaValor != 0 && 
+    jogo[2][0].casaValor == jogo[1][1].casaValor &&
+    jogo[1][1].casaValor == jogo[0][2].casaValor){
+      alert(`${jogo[2][0].casaValor} Ganhou!`);
+      if(jogo[2][0].casaValor === 'X'){
+        let value = parseInt(document.getElementById('ponto_x').innerHTML)
+        value ++
+        document.getElementById('ponto_x').innerHTML = value
+      }else{
+        let value = parseInt(document.getElementById('ponto_o').innerHTML)
+        value ++
+        document.getElementById('ponto_o').innerHTML = value
+      }
+      limpaTudo();
+    }
+  let jogoFinal = []
+  jogo.forEach((linha) =>
+    linha.forEach((elemento) => (
+      jogoFinal.push(elemento.casaValor)
+    ))
+  )
+  if(jogoFinal.indexOf(0) == -1){
+    alert(`Deu empate!`);
+    limpaTudo();
+  }
 };
 
 window.onload = () => {

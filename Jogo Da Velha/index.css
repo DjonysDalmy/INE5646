@@ -18,6 +18,21 @@
     background-position: center;
 }
 
+.placar{
+    margin-left: 45%;
+    width: 200px;
+    height: 50px;
+    border: black 1px solid;
+}
+
+.ponto_x, .ponto_o{
+    position:absolute;
+}
+
+.ponto_o{
+    margin-left: 189.5px;
+}
+
 .marcacao_x {
     background: url("./imgs/x_JogodaVelha01.jpg")
 }

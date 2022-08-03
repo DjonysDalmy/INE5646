@@ -1,8 +1,21 @@
+h1 {
+    text-align: center;
+    margin: 0;
+}
+
+p:first-of-type {
+    text-align: center;
+}
+
+p:first-of-type > strong {
+    text-decoration: underline;
+}
+
 #jogo {
     border: black 3px solid;
     width: 100%;
     display: block;
-    margin: auto
+    margin: 16px
 }
 
 #jogo>.row {
@@ -11,22 +24,27 @@
 }
 
 #jogo>.row>.col {
-    height: 25vh;
+    height: 22vh;
     width: calc(100% / 3);
     border: black 1px solid;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
+}
+#botoes,.placar {
+    display: flex;
+    justify-content: center;
 }
 
-.placar{
-    margin-left: 45%;
-    width: 200px;
-    height: 50px;
+.btn {
+    margin: 0 12px;
+}
+
+.placar > div{display: flex;
+    min-width: 200px;
     border: black 1px solid;
-}
-
-.ponto_x, .ponto_o{
-    position:absolute;
+    margin: 8px;
+    padding: 4px
 }
 
 .ponto_o{
@@ -34,9 +52,13 @@
 }
 
 .marcacao_x {
-    background: url("./imgs/x_JogodaVelha01.jpg")
+    background: url("./imgs/X.png")
 }
 
 .marcacao_o {
-    background: url("./imgs/o_JogodaVelha02.jpg")
+    background: url("./imgs/O.png")
+}
+
+.marcacao_vencimento {
+    background-color: red;
 }

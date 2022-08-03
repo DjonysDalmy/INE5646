@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Jogo da Velha</title>
+        <link rel="icon" type="image/x-icon" href="imgs/velha.ico?v=1">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="./index.css">
     </head>
     <body>
@@ -16,6 +16,9 @@
         <h1>
             JOGO DA VELHA
         </h1>
+        <hr>
+        <p>Vez do <strong>X</strong></p>
+
 
             <div id="jogo">
                 <div class="row">
@@ -33,18 +36,28 @@
                     <div class="col s4"></div>
                     <div class="col s4"></div>
                 </div>
+                <div id="linha"></div>
             </div>
 
-            <button id="limpar"> Reiniciar jogo</button>
+            <div id="botoes">
+                <a class="waves-effect waves-light btn" id="limpar"> Reiniciar jogo</a>
+                <a class="waves-effect waves-light btn" id="zerar"> Zerar placar</a>
+            </div>
+
+            <div class="placar">
+                <p id="jogador1"><span>Jogador 1</span> (X)</p>
+                <div>
+                    <p class="ponto_x" id="ponto_x">
+                        0
+                    </p>
+                    <p class="ponto_o" id="ponto_o">
+                        0
+                    </p>
+                </div>
+                <p id="jogador2"><span>Jogador 2</span> (O)</p>
+            </div>
       </div>
-      <div class="placar">
-        <p class="ponto_x" id="ponto_x">
-            0
-        </p>
-        <p class="ponto_o" id="ponto_o">
-            0
-        </p>
-      </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="./index.js" async defer></script>
     </body>

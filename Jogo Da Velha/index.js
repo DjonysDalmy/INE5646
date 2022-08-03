@@ -179,13 +179,6 @@ window.onload = () => {
   const casaElementos = document.querySelectorAll("#jogo > .row > .col");
   let limpar = document.querySelector("#limpar");
   let zerar = document.querySelector("#zerar");
-  let jogador1 = document.querySelector("#jogador1 > span");
-  let jogador2 = document.querySelector("#jogador2 > span");
-
-  /*let nomeJogador1 = prompt("Insira o nome do jogador 1:");
-  jogador1.innerHTML = nomeJogador1 ? nomeJogador1 : "Jogador 1";
-  let nomeJogador2 = prompt("Insira o nome do jogador 2:");
-  jogador2.innerHTML = nomeJogador2 ? nomeJogador2 : "Jogador 2";*/
 
   limpar.addEventListener("click", limpaTudo);
   zerar.addEventListener("click", zeraPlacar);

@@ -14,7 +14,7 @@ p:first-of-type > strong {
 #jogo {
     border: black 3px solid;
     width: 100%;
-    display: block;
+    display: inline-block;
     margin: 16px
 }
 
